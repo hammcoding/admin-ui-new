@@ -1,9 +1,9 @@
 import "./App.css";
-import SignInPage from "./pages/SignIn";
-import SignUpPage from "./pages/SignUp";
-import ErrorPage from "./pages/Error";
-import DashboardPage from "./pages/dashboard";
-import BalancePage from "./pages/balance";
+import SignInPage from "./Pages/SignIn";
+import SignUpPage from "./Pages/SignUp";
+import ErrorPage from "./Pages/Error";
+import DashboardPage from "./Pages/dashboard";
+import BalancePage from "./Pages/balance";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
