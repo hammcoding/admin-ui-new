@@ -1,76 +1,115 @@
-import React from "react";
-import Button from "../Elements/Button";
-import CheckBox from "../Elements/CheckBox";
-import LabeledInput from "../Elements/LabeledInput";
-import { Link } from "react-router-dom"; // Import Link dari React Router
+import React from 'react';
+import LabeledInput from '../Elements/LabeledInput';
+import CheckBox from '../Elements/CheckBox';
+import Button from '../Elements/Button';
+// TAMBAHKAN IMPORT INI
+import { Link } from 'react-router-dom';
 
-const FormSignIn = () => {
+function FormSignIn() {
   return (
-    <form action="">
-      <div className="mb-6">
-        <LabeledInput
-          label="Email Address"
-          type="email"
-          placeholder="hello@example.com"
-          name="email"
-        />
-      </div>
-      <div className="mb-6 relative">
-        <LabeledInput
-          label="Password"
-          type="password"
-          placeholder="*************"
-          name="password"
-        />
-        {/* Ikon Mata */}
-        <span className="absolute top-[40px] right-3 text-slate-400 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-        </span>
-      </div>
-
-      <div className="mb-6">
-        <CheckBox label="Keep me signed in" name="status" />
-      </div>
-
-      <Button classname="w-full bg-teal-600 text-white hover:bg-teal-700">Login</Button>
-
-      {/* Divider */}
-      <div className="my-6 flex items-center justify-center relative">
-        <div className="border-t border-slate-300 w-full absolute"></div>
-        <span className="px-3 bg-white relative z-10 text-slate-400 text-sm">
-          or sign in with
-        </span>
-      </div>
-
-      <Button 
-        variant="secondary" 
-        type="button" 
-        classname="w-full bg-gray-100 text-slate-600 hover:bg-gray-200"
+    <> {/* form start */}
+        <div className="mt-16">
+          <form action="">
+            <div className="mb-6">
+                <LabeledInput 
+                label="Email Address"
+                id="email"
+                type="email"
+                placeholder="hello@example.com"
+                name="email"
+                />
+            </div>
+            <div className="mb-6">
+              <LabeledInput
+              label="Password"
+              id="password"
+              type="password"
+              placeholder="************"
+              name="password" 
+              />
+            </div>
+            <div className="mb-3">
+                <CheckBox
+                label="Keep me sign in"
+                id="status"
+                type="checkbox"
+                name="status"
+                />
+            </div>
+            <Button variant="primary" type="submit">
+                Login
+            </Button>
+          </form>
+        </div>
+        {/* form end */}
+        {/* teks start */}
+        <div className="my-9 px-7 flex flex-col justify-center items-center text-xs text-gray-03">
+          <div className="border border-gray-05 w-full"></div>
+          <div className="px-2 bg-special-mainBg absolute"> or sign in with</div>
+        </div>
+        {/* teks end */}
+        {/* sign in with google start */}
+        <div className="mb-8">
+      <Button type="button" variant="secondary">
+  <span className="flex items-center justify-center">
+    <svg
+      className="h-6 w-6 mr-2"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      width="800px"
+      height="800px"
+      viewBox="-0.5 0 48 48"
+      version="1.1"
+    >
+      <title>Google-color</title> <desc>Created with Sketch.</desc>
+      <defs> </defs>
+      <g
+      id="Icons"
+      stroke="none"
+      strokeWidth="1"
+      fill="none"
+      fillRule="evenodd"
       >
-        <span className="flex items-center justify-center gap-2">
-          {/* SVG Google */}
-          <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z" />
-            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z" />
-            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z" />
-            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z" />
-          </svg>
-          Continue with Google
-        </span>
-      </Button>
-
-      {/* Link Navigasi ke Register */}
-      <p className="text-sm mt-5 text-center text-slate-500">
-        Don't have an account?{" "}
-        <Link to="/register" className="font-bold text-teal-600 hover:underline">
-          Sign up
-        </Link>
-      </p>
-    </form>
-  );
-};
+      <g id="Color-" transform="translate(-401.000000, -860.000000)">
+        <g id="Google" transform="translate(401.000000, 860.000000)">
+        <path
+          d="M9.82727273,24 C9.82727273,22.4757333 10.0804318,21.0144 10.5322727,19.6437333 L2.62345455,13.6042667 C1.08206818,16.7338667 0.213636364,20.2602667 0.213636364,24 C0.213636364,27.7365333 1.081,31.2608 2.62025,34.3882667 L10.5247955,28.3370667 C10.0772273,26.9728 9.82727273,25.5168 9.82727273,24"
+          id="Fill-1"
+          fill="#FBBC05"
+        ></path>
+        <path
+          d="M23.7136364,10.1333333 C27.025,10.1333333 30.0159091,11.3066667 32.3659091,13.2266667 L39.2022727,6.4 C35.0363636,2.77333333 29.6954545,0.533333333 23.7136364,0.533333333 C14.4268636,0.533333333 6.44540909,5.84426667 2.62345455,13.6042667 L10.5322727,19.6437333 C12.3545909,14.112 17.5491591,10.1333333 23.7136364,10.1333333"
+          id="Fill-2"
+          fill="#EB4335"
+        ></path>
+        <path
+          d="M23.7136364,37.8666667 C17.5491591,37.8666667 12.3545909,33.888 10.5322727,28.3562667 L2.62345455,34.3946667 C6.44540909,42.1557333 14.4268636,47.4666667 23.7136364,47.4666667 C29.4455,47.4666667 34.9177955,45.4314667 39.0249545,41.6181333 L31.5177727,35.8144 C29.3995682,37.1488 26.7323182,37.8666667 23.7136364,37.8666667"
+          id="Fill-3"
+          fill="#34A853"
+        ></path>
+        <path
+          d="M46.1454545,24 C46.1454545,22.6133333 45.9318182,21.12 45.6113636,19.7333333 L23.7136364,19.7333333 L23.7136364,28.8 L36.3181818,28.8 C35.6879545,31.8912 33.9724545,34.2677333 31.5177727,35.8144 L39.0249545,41.6181333 C43.3393409,37.6138667 46.1454545,31.6490667 46.1454545,24"
+          id="Fill-4"
+          fill="#4285F4"
+        ></path>
+        </g>
+      </g>
+      </g>
+    </svg>
+    Continue with Google
+  </span>
+</Button>
+        </div>
+        {/* sign in with google end */}
+        {/* link start */}
+        <div className="flex justify-center">
+          <Link to="/register" className="text-primary text-sm font-bold">
+            Create an account
+          </Link> {/* <-- PERBAIKAN: Huruf Besar 'L' */}
+        </div>
+        {/* link end */}
+        </>
+  )
+}
 
 export default FormSignIn;

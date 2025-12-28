@@ -1,25 +1,24 @@
-import React from "react";
-import Logo from "../Elements/Logo";
+import React, { useContext} from 'react'
+import Logo from '../Elements/Logo';
+import { ThemeContext } from '../../context/themeContext';
 
-const AuthLayout = (props) => {
-  const { children, title } = props; // Props 'type' sudah tidak dibutuhkan di sini
+function AuthLayout(props) {
+    const { children } = props;
+    const { theme }= useContext(ThemeContext)
+
   return (
-    <div className="flex justify-center min-h-screen items-center font-poppins">
-      <div className="w-full max-w-xs">
-        {/* Logo */}
-        <div className="flex justify-center mb-6">
-            <Logo />
-        </div>
-        
-        {/* Judul Halaman */}
-        <h1 className="text-2xl font-bold mb-8 text-center text-slate-900">{title}</h1>
-        
-        {/* Form akan dirender di sini (sudah termasuk link footer di dalamnya) */}
+    <> 
+    <main
+    main className={`min-h-screen bg-special-mainBg flex justify-center items-center ${theme.name}`}>
+      {/* container start */}
+      <div className="w-full max-w-sm">
+        <Logo />
         {children}
-        
       </div>
-    </div>
-  );
-};
+      {/* container end */}
+    </main>
+    </>
+  )
+}
 
-export default AuthLayout;
+export default AuthLayout
