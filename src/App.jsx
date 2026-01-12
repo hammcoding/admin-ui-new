@@ -1,5 +1,5 @@
 import "./App.css";
-import SignInPage from "./pages/SignIn";
+import SignInPage from "./pages/signin";
 import SignUpPage from "./pages/SignUp";
 import ErrorPage from "./pages/Error";
 import DashboardPage from "./pages/dashboard";
