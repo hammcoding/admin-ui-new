@@ -6,10 +6,10 @@ import DashboardPage from "./pages/dashboard";
 import BalancePage from "./pages/balance";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { useContext } from "react";
-import { authContext } from "./context/authContext";
+import { AuthContext } from "./context/authContext";
 
 function App() {
-  const { user } = useContext(authContext);
+  const { user } = useContext(AuthContext);
 
   const RequireAuth = ({ children }) => {
     return user ? children : <Navigate to="/login" />;
