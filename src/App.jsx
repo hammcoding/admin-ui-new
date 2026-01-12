@@ -6,7 +6,7 @@ import DashboardPage from "./pages/dashboard";
 import BalancePage from "./pages/balance";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "./context/authContext";
+import { authContext } from "./context/authContext";
 
 function App() {
   const { user } = useContext(AuthContext);
