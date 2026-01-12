@@ -9,7 +9,7 @@ import { useContext } from "react";
 import { authContext } from "./context/authContext";
 
 function App() {
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(authContext);
 
   const RequireAuth = ({ children }) => {
     return user ? children : <Navigate to="/login" />;
